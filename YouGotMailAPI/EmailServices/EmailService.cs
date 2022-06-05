@@ -12,7 +12,7 @@ namespace YouGotMailAPI.EmailServices
         private const string APIKey = "792c6e808c78387301751f9ff7a73985-100b5c8d-60ab1d03";
         private const string BaseUri = "https://api.mailgun.net/v3";
         private const string Domain = "sandbox164811c8e1294099be864f1411f44f23.mailgun.org";
-        private const string SenderAddress = "YouGotA@Mail.com";
+        private const string SenderAddress = "email";
         private const string SenderDisplayName = "YouGotAMail";
         private const string Tag = "sampleTag";
 
