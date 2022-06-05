@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <title>All notifikationer</title>
+</head>
+
+<body>
+  <div id="app">
+    <p><a href="index.html" class="btn btn-warning">Tilbage</a></p>
+    <h2>Alle leveringer</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>
+            <p>Dato</p>
+          </th>
+          <th>
+            <p>Tidspunkt</p>
+          </th>
+          <th>
+            <button class="btn btn-warning" v-on:click="deleteAllMail">Slet alt</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="mail, index in mails">
+          <td>
+           <p> {{ConvertUnixToDate(mail.unixTimeStamp)}}</p>
+        </td>
+          <td>
+            <p>{{ConvertUnixToTime(mail.unixTimeStamp)}}</p>
+          </td>
+          <td>
+            <button class="btn btn-warning" v-on:click="deleteMail(mail.id)">Slet</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer class="footer">
+      <div class="container" style="text-align: center; padding-bottom: 5px;">
+        <p class="text-warning">PostNord &copy; PostMasters 2022<br>
+          <a href="privacy.html">Privatlivs politik</a>
+        </p>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

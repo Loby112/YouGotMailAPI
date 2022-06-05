@@ -1,0 +1,87 @@
+body {
+    background-color: rgb(193, 3, 3);
+    padding: 10px;
+}
+
+p, li, ul {
+    color: #ffffff;
+    font-family: Roboto;
+    font-weight: 300;
+}
+
+a {
+    color: #ffffff;
+}
+
+h1 {
+    color: #ffffff;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+h2 {
+    color: #ffffff;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+h3 {
+    color: #ffffff;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+h4 {
+    color: #ffffff;
+    font-family: Roboto;
+    font-weight: 500;
+}
+h5{
+    color: #ffffff;
+    font-family: Roboto;
+    
+}
+
+/* footer {
+    position: absolute;
+    bottom: 0;
+    width: 97%;
+    height: 50px;
+  } */
+
+.btn {
+    margin: 5px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.headline {
+    text-align: center;
+    padding: 5vh;
+}
+
+.card-container{
+    /* position: relative; */
+    height: 100%;
+}
+.card {
+    background-color: rgb(216, 0, 0);   
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+table, th, td, tr {
+    /* border-bottom: 2px solid rgb(247, 251, 4); */
+    border-top: 0px;
+  }
+
+.bell{
+    height: 30px;
+    width: auto;
+    margin-left: 5em;
+}

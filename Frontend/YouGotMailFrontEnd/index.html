@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="25" /> -->
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>You Got Mail WebApp</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="card-container">
+            <div class="card" style="border-color: white;">
+                <div class="card-body" >
+                    <a href="email.html"><i class="fa-solid fa-gears fa-2x"
+                            style="position: absolute; right: 0px; padding-right: 1rem;"></i></a>
+                    <img class="card-img-top" src="imgs/logo.png" alt="mailbox">
+                    <div v-if="mails.length">
+                        <template v-if="mails[0].detected==='yes'">
+                            <div>
+                                <h4 class="card-title" style="text-align: center;">Du har post!<a href="mail.html"></a>
+                                </h4>
+                                <div >
+                                    <p style="border: 1px solid white; background-color: rgb(193, 3, 3); padding-top: 1em; padding-bottom: 1em; border-radius: 3px;">{{mails[0].message}} <br> 
+                                    {{ ConvertUnix(mails[0].unixTimeStamp) }}</p>
+                                </div>
+                                
+                            </div>
+                            <!-- <button class="btn btn-success" v-on:click="clearMail" style="width: 100%;">Afhent post</button> -->
+                        </template>
+                        <div v-else>
+                            <p class="card-title" style="text-align: center;">Du har ingen post</p>
+                        </div>
+                    </div>
+
+                    <div class="button-container">
+                        <p>
+                        <a href="all.html" class="btn btn-warning" style="width: 100%;">Se alle leveringer</a></p>
+                    </div>
+                    <!-- <img class="card-img-top" src="imgs/logo.png" alt="mailbox"> -->
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container" style="text-align: center; padding-bottom: 5px;">
+                <div style="margin-top: 2em; margin-bottom: 2em;">
+                    <img src="imgs/fivestars2.png" style="width:50%" alt="five stars">
+                    <p>Fem store stjerner fra Berlingske, BT, Politiken.</p>
+                </div>
+                <p class="text-warning"><a href="https://www.postnord.dk/" target="_blank" style="color:yellow;">PostNord &copy; PostMasters 2022</a><br>
+                    <a href="privacy.html">Privatlivs politik</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

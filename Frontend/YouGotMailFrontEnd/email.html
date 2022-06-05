@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="eMailsScript.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <title>Mail Input</title>
+</head>
+
+<body>
+  <div id="email">
+    <p><a href="index.html" class="btn btn-warning">Tilbage</a></p>
+    <h2>Få notifikationer fra os!</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+
+          <input id="emailInput" v-model="addData.toEmails" placeholder="email@adresse.com" type="email" name="email"/><button id="button" v-on:click="addEmail()" class="btn btn-success">Add</button>
+
+        </div>
+      </div>
+      <br>
+      <div>
+        <table class="table table-striped">
+          <thead>
+          </thead>
+
+          <tbody>
+            <tr v-for="email in emails">
+              <td>
+                <p id="output"> {{email.toEmails}}</p>
+              </td>
+              <td>
+                <button id="deleteButton" class="btn btn-warning" v-on:click="deleteEmail(email.id)">Slet</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
